@@ -9,7 +9,7 @@ public class javaShop {
 
     public javaShop(String nome){
         this.nome = nome;
-        this.codice = (int)(Math.random()*5000);
+        this.codice = (int)(Math.random()*5000);  //random.nextInt(bound:1000);
     }
 
     public double prezzoBase(){
@@ -18,14 +18,14 @@ public class javaShop {
     }
 
     public double prezzoFinale(){
-        double prezzoFinale = prezzo+iva;
+        double prezzoFinale = prezzo + ((prezzo*iva)/100);
         System.out.println("Il prezzo finale è di " + prezzoFinale + " euro.");
         return prezzoFinale;
         
     }
 
     public String nomeEsteso(){
-        String nomeEsteso = nome + "-" + codice;
+        String nomeEsteso = codice + "-" + nome;
         System.out.println("Il prodotto selezionato è " + nomeEsteso);
         return nomeEsteso;
     }
@@ -33,23 +33,3 @@ public class javaShop {
 
 
 }
-
-
-
-
-
-// Esercizio di oggi Java Shop
-// repo : java-oop-shop
-// Nel progetto java-oop-shop, creare la classe Prodotto che gestisce i prodotti dello shop.
-// Un prodotto è caratterizzato da:
-// - codice (numero intero)
-// - nome
-// - descrizione
-// - prezzo
-// - iva
-// Usate opportunamente costruttori, attributi ed eventuali altri metodi di “utilità” per fare in modo che:
-// - alla creazione di un nuovo prodotto il codice sia valorizzato con un numero random
-// - il prodotto esponga un metodo per avere il prezzo base
-// - il prodotto esponga un metodo per avere il prezzo comprensivo di iva
-// - il prodotto esponga un metodo per avere il nome esteso, ottenuto concatenando codice-nome
-// Aggiungete una classe Main con metodo main nella quale testate tutte le funzionalità della classe Prodotto.
