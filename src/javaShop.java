@@ -7,12 +7,28 @@ public class javaShop {
     public double prezzo;
     public double iva;
 
-    public javaShop(){
+    public javaShop(String nome){
+        this.nome = nome;
+        this.codice = (int)(Math.random()*5000);
+    }
+
+    public double prezzoBase(){
+        System.out.println("Il prezzo base è di " + prezzo + " euro.");
+        return prezzo;
+    }
+
+    public double prezzoFinale(){
+        double prezzoFinale = prezzo+iva;
+        System.out.println("Il prezzo finale è di " + prezzoFinale + " euro.");
+        return prezzoFinale;
         
     }
 
-
-
+    public String nomeEsteso(){
+        String nomeEsteso = nome + "-" + codice;
+        System.out.println("Il prodotto selezionato è " + nomeEsteso);
+        return nomeEsteso;
+    }
 
 
 
